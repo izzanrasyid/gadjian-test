@@ -84,7 +84,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #23c7c6;
 }
 
 .Link-title {
@@ -113,16 +113,19 @@
 
 .Content-header {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  margin: 20px 20px 0 20px;
+  margin: 40px 40px 0 40px;
   background-color: #fff;
   height: 80px;
+  flex-wrap: wrap;
 }
 
 .Content-body {
   height: 500px;
-  background-color: #fff;
-  margin: 20px 20px;
+  margin: 40px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .Personnel-list-title {
@@ -130,24 +133,92 @@
   flex-direction: column;
   justify-content: center;
   padding-left: 20px;
+  flex: 20%;
 }
 
 .Personnel-list-button {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  width: 20%;
+  flex: 20%;
 }
 
 .PL-title {
   color: #61dafb;
   font-size: x-large;
   font-weight: bold;
-  height: 40px;
-  margin: 15px 0 0 0;
+  height: 30px;
+  margin: 10px 0 0 0;
+  padding-bottom: 0;
 }
 
 .PL-info {
-  height: 40px;
+  height: 20px;
   margin: 0 0 10px 0
+}
+
+/* .Employee-card {
+  width: 250px;
+  height: 460px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+} */
+
+@media (max-width: 962px) {
+  .Content-header {
+    display: flex;
+    flex-wrap: wrap;
+    height: 200px;
+  }
+
+  .Personnel-list-title {
+    flex: 100%;
+  }
+
+}
+
+.Responsive-btns {
+  flex: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 100px;
+  margin-top: 10px;
+}
+
+.Find-btn {
+  width: 200px;
+  height: 40px;
+  margin: 0 2.5px 0 20px;
+  border: 0.5px solid #e7e7e7;
+  background-color: #fff;
+  color: #707070;
+}
+
+.Add-btn {
+  width: 200px;
+  height: 40px;
+  margin: 0 20px 0 2.5px;
+  background-color: #23c7c6;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+}
+
+.M-find-btn {
+  flex: 6;
+  border: 0.5px solid #e7e7e7;
+  background-color: #fff;
+  color: #707070;
+  margin: 5px 10px;
+}
+
+.M-add-btn {
+  flex: 6;
+  background-color: #23c7c6;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  margin: 5px 10px;
 }
