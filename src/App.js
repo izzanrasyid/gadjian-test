@@ -9,6 +9,8 @@ import {
 import Home from './views/Home'
 import List from './views/List'
 import Hamburger from 'hamburger-react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUsers, faHome, faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
 
 
 function App() {
@@ -41,7 +43,7 @@ function App() {
         <div className="Header-center"></div>
         <div className="Header-right">
           <div className="Text-user">
-            <p className="Black-font">Hallo, Gadjian User</p>
+            <p className="Black-font">Hallo,<span className="Gadjian-color"> Gadjian User</span></p>
           </div>
           <div>
             <img className="Username-ava" src="https://img.a.transfermarkt.technology/portrait/big/33923-1618682220.jpg?lm=1"></img>
@@ -53,14 +55,20 @@ function App() {
           { 
             globalWidth >= 768 && (
               <div className="Navbar">
-                <div className="Home-link">
-                  <Link className="Link-title" to="/">Beranda</Link>
+                <div className="Nav-link">
+                  <Link className="Link-title" to="/">
+                    <FontAwesomeIcon icon={faHome}/><span> Beranda</span>
+                  </Link>
                 </div>
-                <div className="List-link">
-                <Link className="Link-title" to="/">Personnel List</Link>
+                <div className="Nav-link">
+                <Link className="Link-title" to="/">
+                  <FontAwesomeIcon icon={faUsers}/><span> Personnel List</span>
+                </Link>
                 </div>
-                <div className="Attendance-link">
-                <Link className="Link-title" to="/">Daily Attendance</Link>
+                <div className="Nav-link">
+                <Link className="Link-title" to="/">
+                  <FontAwesomeIcon icon={faCalendarAlt}/><span> Daily Attendance</span>
+                </Link>
                 </div>
               </div>
             ) 
