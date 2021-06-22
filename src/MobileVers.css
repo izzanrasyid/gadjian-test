@@ -1,0 +1,20 @@
+.M-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.M-content-header {
+  background-color: #fff;
+  margin: 15px 15px;
+}
+
+.M-content-body {
+  background-color: lawngreen;
+}
+
+.M-personnel-list-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
