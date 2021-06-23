@@ -10,6 +10,7 @@
   flex-direction: row;
   /* font-size: calc(10px + 2vmin); */
   justify-content: center;
+  padding-top: 10px;
 }
 
 .Header-left {
@@ -42,7 +43,10 @@
 
 @media (max-width: 768px) {
   .App-header {
-    padding-left: 20px;
+    position: fixed;
+    min-width: 100%;
+    padding: 10px 10px 10px 10px;
+    border-bottom: 60px;
   }
   
   .Text-user {
@@ -53,8 +57,16 @@
     margin: 0 20px;
   }
 
+  .Content {
+    margin-top: 70px;
+  }
+
   .Content-body {
     flex-direction: column;
+  }
+
+  .Header-left {
+    padding-left: 5px;
   }
 }
 
@@ -72,7 +84,7 @@
 }
 
 .App-menu {
-  padding-top: 30px;
+  padding-top: 10px;
   display: flex;
 }
 
@@ -116,7 +128,10 @@
 }
 
 .Burger-menu {
-  padding-top: 20px;
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .Content {
@@ -256,6 +271,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 0.5rem;
 }
 
 .Circle {

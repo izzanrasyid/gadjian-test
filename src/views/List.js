@@ -61,8 +61,8 @@ function List () {
               <p className="Id-person-title">Personnel ID: <span className="Id-person-number">12345</span></p>
               <div className="Three-circle">
                 <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
-                <FontAwesomeIcon icon={faCircle} size='xs'/>
-                <FontAwesomeIcon icon={faCircle} size='xs'/>
+                <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
+                <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
               </div>
             </div>
             <div className="Card-body">
@@ -74,6 +74,11 @@ function List () {
           <div className="Employee-card">
             <div className="Card-header">
               <p className="Id-person-title">Personnel ID: <span className="Id-person-number">12345</span></p>
+              <div className="Three-circle">
+                <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
+                <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
+                <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
+              </div>
             </div>
             <div className="Card-body">
               <p>Test2</p>
@@ -84,6 +89,11 @@ function List () {
           <div className="Employee-card">
             <div className="Card-header">
               <p className="Id-person-title">Personnel ID: <span className="Id-person-number">12345</span></p>
+              <div className="Three-circle">
+                <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
+                <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
+                <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
+              </div>
             </div>
             <div className="Card-body">
               <p>Test2</p>
@@ -94,6 +104,11 @@ function List () {
           <div className="Employee-card">
             <div className="Card-header">
               <p className="Id-person-title">Personnel ID: <span className="Id-person-number">12345</span></p>
+              <div className="Three-circle">
+                <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
+                <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
+                <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
+              </div>
             </div>
             <div className="Card-body">
               <p>Test2</p>
