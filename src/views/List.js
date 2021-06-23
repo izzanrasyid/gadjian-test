@@ -3,6 +3,7 @@ import '../App.css'
 import '../MobileVers.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircle, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons'
+import EmployeeCard from '../components/EmployeeCard'
 
 function List () {
   const [globalWidth, setGlobalWidth] = useState(window.innerWidth)
@@ -56,66 +57,10 @@ function List () {
           }
         </div>
         <div className="Content-body">
-          <div className="Employee-card">
-            <div className="Card-header">
-              <p className="Id-person-title">Personnel ID: <span className="Id-person-number">12345</span></p>
-              <div className="Three-circle">
-                <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
-                <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
-                <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
-              </div>
-            </div>
-            <div className="Card-body">
-              <p>Test2</p>
-              <p>Test2</p>
-              <p>Test2</p>
-            </div>
-          </div>
-          <div className="Employee-card">
-            <div className="Card-header">
-              <p className="Id-person-title">Personnel ID: <span className="Id-person-number">12345</span></p>
-              <div className="Three-circle">
-                <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
-                <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
-                <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
-              </div>
-            </div>
-            <div className="Card-body">
-              <p>Test2</p>
-              <p>Test2</p>
-              <p>Test2</p>
-            </div>
-          </div>
-          <div className="Employee-card">
-            <div className="Card-header">
-              <p className="Id-person-title">Personnel ID: <span className="Id-person-number">12345</span></p>
-              <div className="Three-circle">
-                <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
-                <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
-                <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
-              </div>
-            </div>
-            <div className="Card-body">
-              <p>Test2</p>
-              <p>Test2</p>
-              <p>Test2</p>
-            </div>
-          </div>
-          <div className="Employee-card">
-            <div className="Card-header">
-              <p className="Id-person-title">Personnel ID: <span className="Id-person-number">12345</span></p>
-              <div className="Three-circle">
-                <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
-                <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
-                <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
-              </div>
-            </div>
-            <div className="Card-body">
-              <p>Test2</p>
-              <p>Test2</p>
-              <p>Test2</p>
-            </div>
-          </div>
+          <EmployeeCard />
+          <EmployeeCard />
+          <EmployeeCard />
+          <EmployeeCard />
         </div>
       </div>
     </>

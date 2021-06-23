@@ -1,6 +1,8 @@
 .App {
   height: 100vh;
   width: 100vw;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-header {
@@ -86,6 +88,7 @@
 .App-menu {
   padding-top: 10px;
   display: flex;
+  height: 100%;
 }
 
 .Navbar {
@@ -103,7 +106,6 @@
 .Main {
   flex: 1;
   background-color: #F5F5F5;
-  /* height: 86vh; */
   display: flex;
   flex-direction: column;
 }
@@ -190,7 +192,7 @@
   height: 460px; */
   background-color: #fff;
   border-radius: 10px;
-  margin: 10px 5px 30px 5px;
+  margin: 10px 5px 0 5px;
   flex: 3;
   display: flex;
   flex-direction: column;
@@ -281,6 +283,15 @@
 .Card-body {
   flex: 11;
   padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.Card-body-res {
+  flex: 11;
+  display: flex;
+  margin: 20px;
 }
 
 .Id-person-title {
@@ -296,4 +307,47 @@
 
 .Gadjian-color {
   color: #23c7c6;
+}
+
+.Employee-img {
+  flex: 3;
+  margin: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* height: 100%;
+  width: 100%; */
+}
+
+.Employee-img-res {
+  flex: 4;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Employee-ava {
+  object-fit: cover;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+
+.Employee-info {
+  flex: 9;
+}
+
+.Employee-info-res {
+  flex: 8;
+  margin: 20px 20px;
+}
+
+.Employee-info-title {
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.Employee-info-containt {
+  font-size: 12px;
 }
