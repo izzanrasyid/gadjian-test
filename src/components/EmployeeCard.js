@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircle } from '@fortawesome/free-solid-svg-icons'
 
 
-function EmployeeCard () {
+function EmployeeCard (props) {
   const [globalWidth, setGlobalWidth] = useState(window.innerWidth)
 
   useEffect(() => {
@@ -21,51 +21,43 @@ function EmployeeCard () {
   return (
     <div className="Employee-card">
       <div className="Card-header">
-        <p className="Id-person-title">Personnel ID: <span className="Id-person-number">12345</span></p>
+      <p className="Id-person-title">Personnel ID: <span className="Id-person-number">{ (props.id + 1) + (props.pgNumber * 4) }</span></p>
         <div className="Three-circle">
           <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
           <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
           <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
         </div>
       </div>
-      {
-        globalWidth >= 768 && (
-          <div className="Card-body">
-            <div className="Employee-img">
-              <img className="Employee-ava" src="https://img.a.transfermarkt.technology/portrait/big/33923-1618682220.jpg?lm=1"></img>
-            </div>
-            <div className="Employee-info">
-            <div className="Employee-name">
-                <p className="Employee-info-title">Name</p>
-                <p className="Employee-info-containt">First Name Last Name</p>
-              </div>
-              <div className="Employee-telp">
-                <p className="Employee-info-title">Telephone</p>
-                <p className="Employee-info-containt">Phone Number</p>
-              </div>
-            </div>
+      <div className="Card-body">
+        <div className="Employee-img">
+          <img className="Employee-ava" src={ props.picture }></img>
+        </div>
+        <div className="Employee-info">
+          <div className="Employee-name">
+            <p className="Employee-info-title">Name</p>
+            <p className="Employee-info-containt">{ `${props.firstName} ${props.lastName}` }</p>
           </div>
-        )
-      }
-      {
-        globalWidth < 768 && (
-          <div className="Card-body-res">
-            <div className="Employee-img-res">
-              <img className="Employee-ava" src="https://img.a.transfermarkt.technology/portrait/big/33923-1618682220.jpg?lm=1"></img>
-            </div>
-            <div className="Employee-info-res">
-              <div className="Employee-name">
-                <p className="Employee-info-title">Name</p>
-                <p className="Employee-info-containt">First Name Last Name</p>
-              </div>
-              <div className="Employee-telp">
-                <p className="Employee-info-title">Telephone</p>
-                <p className="Employee-info-containt">Phone Number</p>
-              </div>
-            </div>
+          <div className="Employee-telp">
+            <p className="Employee-info-title">Telephone</p>
+            <p className="Employee-info-containt">{ props.phone }</p>
           </div>
-        )
-      }
+          {
+            globalWidth >= 768 ?
+              <>
+                <div className="Employee-dob">
+                  <p className="Employee-info-title">Birthday</p>
+                  <p className="Employee-info-containt">{ props.birthDate }</p>
+                </div>
+                <div className="Employee-mail">
+                  <p className="Employee-info-title">Email</p>
+                  <p className="Employee-info-containt">{ props.email }</p>
+                </div>
+              </>
+            :
+              null
+          }
+        </div>
+      </div>
     </div>
   )
 }
