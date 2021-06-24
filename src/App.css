@@ -315,7 +315,7 @@
   }
 
   .Employee-img {
-    flex: 4;
+    flex: 3;
     margin: 10px;
     display: flex;
     justify-content: center;
@@ -323,7 +323,7 @@
   }
 
   .Employee-info {
-    flex: 8;
+    flex: 9;
     margin: 20px 20px;
   }
 
@@ -432,4 +432,34 @@
 
 .Disabled-action-pg span {
   color: gray;
+}
+
+.Menubar {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 20vh;
+  margin-top: 78px;
+}
+
+.Menubar-btn {
+  flex: 1;
+  text-align: start;
+  padding-left: 20px;
+  background-color: #fff;
+  border: none;
+}
+
+.Menubar-btn:hover {
+  background-color: #23c7c6;
+}
+
+.Not-found-pg {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

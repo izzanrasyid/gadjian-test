@@ -21,7 +21,7 @@ function EmployeeCard (props) {
   return (
     <div className="Employee-card">
       <div className="Card-header">
-      <p className="Id-person-title">Personnel ID: <span className="Id-person-number">{ (props.id + 1) + (props.pgNumber * 4) }</span></p>
+      <p className="Id-person-title">Personnel ID: <span className="Id-person-number">{ props.id }</span></p>
         <div className="Three-circle">
           <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>
           <FontAwesomeIcon className="Circle" icon={faCircle} size='xs'/>

@@ -14,7 +14,7 @@ function List () {
   const dispatch = useDispatch()
 
   function employeePerPage (page) {
-    return employees.slice((page * 4), ((page + 1) * 4 ))
+    return employees.map((el, ind) => ({ ...el, id: ind + 1 })).slice((page * 4), ((page + 1) * 4 ))
   }
 
   useEffect(() => {
@@ -64,7 +64,7 @@ function List () {
             employeePerPage(pageNumber).map((employee, ind) => {
               return (
                 <EmployeeCard 
-                  id={ind}
+                  id={employee.id}
                   pgNumber={pageNumber}
                   picture={employee.picture.large}
                   firstName={employee.name.first}
@@ -72,7 +72,7 @@ function List () {
                   phone={employee.phone}
                   email={employee.email}
                   birthDate={employee.dob.date}
-                  key={ind}
+                  key={employee.id}
                 />
               )
             })

@@ -4,17 +4,24 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useHistory
 } from "react-router-dom"
-import Home from './views/Home'
+import NoPage from './views/NoPage'
 import List from './views/List'
+import Menubar from './components/Menubar'
 import Hamburger from 'hamburger-react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUsers, faHome, faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
 
-
 function App() {
   const [globalWidth, setGlobalWidth] = useState(window.innerWidth)
+  const [menubarActive, setMenubarActive] = useState(false)
+  const history = useHistory()
+
+  function burgerClick () {
+    setMenubarActive(!menubarActive)
+  }
 
   useEffect(() => {
     window.addEventListener("resize", (parameter, tes) => {
@@ -31,9 +38,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         {
-          globalWidth <= 768 && (
+          globalWidth <= 1000 && (
             <div className="Burger-menu">
-              <Hamburger />
+              <Hamburger onToggle={burgerClick} />
             </div>
           )
         }
@@ -51,9 +58,12 @@ function App() {
         </div>
       </header>
       <Router>
+      {
+        menubarActive === true && globalWidth <= 1000 ? <Menubar /> : null
+      }
         <div className="App-menu">
           { 
-            globalWidth >= 768 && (
+            globalWidth > 1000 && (
               <div className="Navbar">
                 <div className="Nav-link">
                   <Link className="Link-title" to="/">
@@ -61,12 +71,12 @@ function App() {
                   </Link>
                 </div>
                 <div className="Nav-link">
-                <Link className="Link-title" to="/">
+                <Link className="Link-title" to="/lists">
                   <FontAwesomeIcon icon={faUsers}/><span> Personnel List</span>
                 </Link>
                 </div>
                 <div className="Nav-link">
-                <Link className="Link-title" to="/">
+                <Link className="Link-title" to="/daily-attendance">
                   <FontAwesomeIcon icon={faCalendarAlt}/><span> Daily Attendance</span>
                 </Link>
                 </div>
@@ -76,10 +86,13 @@ function App() {
           <div className="Main">
             <Switch>
               <Route path='/lists'>
-                <Home />
+                <List />
+              </Route>
+              <Route path='/daily-attendance'>
+                <NoPage />
               </Route>
               <Route path="/">
-                <List />
+                <NoPage />
               </Route>
             </Switch>
           </div>
