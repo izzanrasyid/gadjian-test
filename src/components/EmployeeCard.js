@@ -30,7 +30,7 @@ function EmployeeCard (props) {
       </div>
       <div className="Card-body">
         <div className="Employee-img">
-          <img className="Employee-ava" src={ props.picture }></img>
+          <img className="Employee-ava" src={ props.picture } alt="Employee"></img>
         </div>
         <div className="Employee-info">
           <div className="Employee-name">

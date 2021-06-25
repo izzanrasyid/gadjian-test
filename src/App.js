@@ -5,7 +5,6 @@ import {
   Switch,
   Route,
   Link,
-  useHistory
 } from "react-router-dom"
 import NoPage from './views/NoPage'
 import List from './views/List'
@@ -17,7 +16,6 @@ import { faUsers, faHome, faCalendarAlt } from '@fortawesome/free-solid-svg-icon
 function App() {
   const [globalWidth, setGlobalWidth] = useState(window.innerWidth)
   const [menubarActive, setMenubarActive] = useState(false)
-  const history = useHistory()
 
   function burgerClick () {
     setMenubarActive(!menubarActive)
@@ -30,10 +28,6 @@ function App() {
     })
   }, [])
 
-  useEffect(() => {
-    console.log(globalWidth)
-  }, [globalWidth])
-
   return (
     <div className="App">
       <header className="App-header">
@@ -45,7 +39,7 @@ function App() {
           )
         }
         <div className="Header-left">
-          <img className="App-logo" src="https://images.glints.com/unsafe/glints-dashboard.s3.amazonaws.com/company-logo/e196fd5534bec8a1696b426156b889d3.png"></img>
+          <img className="App-logo" src="https://images.glints.com/unsafe/glints-dashboard.s3.amazonaws.com/company-logo/e196fd5534bec8a1696b426156b889d3.png" alt="Gadjian logo"></img>
         </div>
         <div className="Header-center"></div>
         <div className="Header-right">
@@ -53,7 +47,7 @@ function App() {
             <p className="Black-font">Hallo,<span className="Gadjian-color"> Gadjian User</span></p>
           </div>
           <div>
-            <img className="Username-ava" src="https://img.a.transfermarkt.technology/portrait/big/33923-1618682220.jpg?lm=1"></img>
+            <img className="Username-ava" src="https://img.a.transfermarkt.technology/portrait/big/33923-1618682220.jpg?lm=1" alt="User Avatar"></img>
           </div>
         </div>
       </header>

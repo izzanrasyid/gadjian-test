@@ -8,7 +8,6 @@ import EmployeeCard from '../components/EmployeeCard'
 import { fetchEmployees, setEmployees } from '../store/action'
 
 function List () {
-  const [globalWidth, setGlobalWidth] = useState(window.innerWidth)
   const [pageNumber, setPageNumber] = useState(0)
   const employees = useSelector(state => state.employeesReducer.employees)
   const dispatch = useDispatch()
@@ -16,13 +15,6 @@ function List () {
   function employeePerPage (page) {
     return employees.map((el, ind) => ({ ...el, id: ind + 1 })).slice((page * 4), ((page + 1) * 4 ))
   }
-
-  useEffect(() => {
-    window.addEventListener("resize", (parameter, tes) => {
-      const windowWidth = window.innerWidth;
-      setGlobalWidth(windowWidth)
-    })
-  }, [])
 
   useEffect(() => {
     dispatch(fetchEmployees())
@@ -34,13 +26,7 @@ function List () {
       .catch(err => {
         console.log(err)
       })
-  }, [])
-      
-  useEffect(() => {
-    if (employees.length > 0) {
-      console.log(employees, '<<<<<<< hei id')
-    }
-  }, [employees])
+  }, [dispatch])
 
   return (
     <>
