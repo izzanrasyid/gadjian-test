@@ -15,10 +15,6 @@ function EmployeeCard (props) {
     })
   }, [])
 
-  useEffect(() => {
-    console.log('Did Mounted')
-  }, [globalWidth])
-
   return (
     <div className="Employee-card">
       <div className="Card-header">

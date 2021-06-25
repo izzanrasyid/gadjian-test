@@ -29,7 +29,6 @@ function List (props) {
 
   useEffect(() => {
     dispatch(setPageName(props.pageName))
-    console.log('Kante')
   }, [dispatch, props.pageName])
 
   return (

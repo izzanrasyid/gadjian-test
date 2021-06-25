@@ -9,7 +9,6 @@ function DailyAttendance (props) {
 
   useEffect(() => {
     dispatch(setPageName(props.pageName))
-    console.log('Did Kai Havertz')
   }, [dispatch, props.pageName])
 
   return (

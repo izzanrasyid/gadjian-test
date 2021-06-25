@@ -9,7 +9,6 @@ function Home (props) {
 
   useEffect(() => {
     dispatch(setPageName(props.pageName))
-    console.log('Did Timo Werner')
   }, [dispatch, props.pageName])
 
   return (

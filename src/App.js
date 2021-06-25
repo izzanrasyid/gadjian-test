@@ -32,8 +32,7 @@ function App() {
   }, [])
   
   useEffect(() => {
-    console.log(pageName, 'pageName')
-    console.log('Did Thomas Tuchel')
+    
   },[pageName])
 
   return (
