@@ -1,7 +1,7 @@
 import React from 'react'
 import '../App.css'
 
-function NoPage () {
+function NoPage (props) {
   return (
     <div className="Not-found-pg">
       <h1>This page is not available</h1>

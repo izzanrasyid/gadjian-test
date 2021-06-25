@@ -5,9 +5,9 @@ import '../MobileVers.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faSearch, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import EmployeeCard from '../components/EmployeeCard'
-import { fetchEmployees, setEmployees } from '../store/action'
+import { fetchEmployees, setEmployees, setPageName } from '../store/action'
 
-function List () {
+function List (props) {
   const [pageNumber, setPageNumber] = useState(0)
   const employees = useSelector(state => state.employeesReducer.employees)
   const dispatch = useDispatch()
@@ -20,13 +20,17 @@ function List () {
     dispatch(fetchEmployees())
       .then(response => response.json())
       .then(employees => {
-        // console.log(employees, 'employees');
         dispatch(setEmployees(employees.results))
       })
       .catch(err => {
         console.log(err)
       })
   }, [dispatch])
+
+  useEffect(() => {
+    dispatch(setPageName(props.pageName))
+    console.log('Kante')
+  }, [dispatch, props.pageName])
 
   return (
     <>

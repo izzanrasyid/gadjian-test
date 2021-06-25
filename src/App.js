@@ -6,8 +6,10 @@ import {
   Route,
   Link,
 } from "react-router-dom"
-import NoPage from './views/NoPage'
+import { useSelector } from 'react-redux'
+import Home from './views/Home'
 import List from './views/List'
+import DailyAttendance from './views/DailyAttendance'
 import Menubar from './components/Menubar'
 import Hamburger from 'hamburger-react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -16,17 +18,23 @@ import { faUsers, faHome, faCalendarAlt } from '@fortawesome/free-solid-svg-icon
 function App() {
   const [globalWidth, setGlobalWidth] = useState(window.innerWidth)
   const [menubarActive, setMenubarActive] = useState(false)
-
+  const pageName = useSelector(state => state.pageReducer.pageName)
+  
   function burgerClick () {
     setMenubarActive(!menubarActive)
   }
-
+  
   useEffect(() => {
     window.addEventListener("resize", (parameter, tes) => {
       const windowWidth = window.innerWidth;
       setGlobalWidth(windowWidth)
     })
   }, [])
+  
+  useEffect(() => {
+    console.log(pageName, 'pageName')
+    console.log('Did Thomas Tuchel')
+  },[pageName])
 
   return (
     <div className="App">
@@ -60,19 +68,19 @@ function App() {
             globalWidth > 1000 && (
               <div className="Navbar">
                 <div className="Nav-link">
-                  <Link className="Link-title" to="/">
-                    <FontAwesomeIcon icon={faHome}/><span> Beranda</span>
+                  <Link className={pageName === 'home' ? "Active-link-title" : "Link-title"} to="/">
+                    <FontAwesomeIcon className={pageName === 'home' ? "Active-link-icon" : "Link-icon"} icon={faHome}/><span> Beranda</span>
                   </Link>
                 </div>
                 <div className="Nav-link">
-                <Link className="Link-title" to="/lists">
-                  <FontAwesomeIcon icon={faUsers}/><span> Personnel List</span>
-                </Link>
+                  <Link className={pageName === 'list' ? "Active-link-title" : "Link-title"} to="/lists">
+                    <FontAwesomeIcon className={pageName === 'list' ? "Active-link-icon" : "Link-icon"} icon={faUsers}/><span> Personnel List</span>
+                  </Link>
                 </div>
                 <div className="Nav-link">
-                <Link className="Link-title" to="/daily-attendance">
-                  <FontAwesomeIcon icon={faCalendarAlt}/><span> Daily Attendance</span>
-                </Link>
+                  <Link className={pageName === 'da' ? "Active-link-title" : "Link-title"} to="/daily-attendance">
+                    <FontAwesomeIcon className={pageName === 'da' ? "Active-link-icon" : "Link-icon"} icon={faCalendarAlt}/><span> Daily Attendance</span>
+                  </Link>
                 </div>
               </div>
             ) 
@@ -80,13 +88,19 @@ function App() {
           <div className="Main">
             <Switch>
               <Route path='/lists'>
-                <List />
+                <List 
+                  pageName="list"
+                />
               </Route>
               <Route path='/daily-attendance'>
-                <NoPage />
+                <DailyAttendance 
+                  pageName="da"
+                />
               </Route>
               <Route path="/">
-                <NoPage />
+                <Home 
+                  pageName="home"
+                />
               </Route>
             </Switch>
           </div>

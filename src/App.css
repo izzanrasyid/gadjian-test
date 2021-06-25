@@ -112,6 +112,11 @@
   padding-bottom: 10px;
 }
 
+.Active-nav-link {
+  padding-bottom: 10px;
+  color: #23c7c6;
+}
+
 .Main {
   flex: 1;
   background-color: #F5F5F5;
@@ -127,6 +132,20 @@
   font-size: medium;
   text-decoration: none;
   color: #000;
+}
+
+.Active-link-title {
+  font-size: medium;
+  text-decoration: none;
+  color: #23c7c6;
+}
+
+.Link-icon {
+  color: #000;
+}
+
+.Active-link-icon {
+  color: #23c7c6;
 }
 
 @keyframes App-logo-spin {

@@ -2,6 +2,7 @@ import React, { useEffect, useState} from 'react'
 import '../App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircle } from '@fortawesome/free-solid-svg-icons'
+import { masa } from 'masa'
 
 
 function EmployeeCard (props) {
@@ -46,7 +47,7 @@ function EmployeeCard (props) {
               <>
                 <div className="Employee-dob">
                   <p className="Employee-info-title">Birthday</p>
-                  <p className="Employee-info-containt">{ props.birthDate }</p>
+                  <p className="Employee-info-containt">{ masa(props.birthDate).format('D MMMM') }</p>
                 </div>
                 <div className="Employee-mail">
                   <p className="Employee-info-title">Email</p>
