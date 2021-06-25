@@ -69,7 +69,7 @@ function List (props) {
           }
         </div>
         <div className="Content-footer">
-          <div>
+          <div className="Content-footer-left">
             {
               pageNumber > 0 ? 
                 <div className="Action-pg" onClick={() => setPageNumber(prev => prev - 1)}>
@@ -83,7 +83,7 @@ function List (props) {
                 </div>
             }
           </div>
-          <div>
+          <div  className="Content-footer-right">
             {
               pageNumber < (employees.length / 4) - 1 ?
                 <div className="Action-pg" onClick={() => setPageNumber(prev => prev + 1)}>
